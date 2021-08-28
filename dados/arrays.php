@@ -53,7 +53,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-1',
 		'filtro' => 'new',
-		'id' => '1'
+		'id' => '1',
+		'categoria' => 'Coleção 2021'
 	],
 	[
 		'titulo' => 'Produto 2',
@@ -63,7 +64,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-2',
 		'filtro' => 'high',
-		'id' => '2'
+		'id' => '2',
+		'categoria' => 'Coleção 2020'
 	],
 	[
 		'titulo' => 'Produto 3',
@@ -73,7 +75,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-3',
 		'filtro' => 'low',
-		'id' => '3'
+		'id' => '3',
+		'categoria' => 'Coleção 2019'
 	],
 	[
 		'titulo' => 'Produto 4',
@@ -83,7 +86,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-4',
 		'filtro' => 'new',
-		'id' => '4'
+		'id' => '4',
+		'categoria' => 'Coleção 2021'
 	],
 	[
 		'titulo' => 'Produto 5',
@@ -93,7 +97,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-5',
 		'filtro' => 'low',
-		'id' => '5'
+		'id' => '5',
+		'categoria' => 'Coleção 2020'
 	],
 	[
 		'titulo' => 'Produto 6',
@@ -103,7 +108,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-6',
 		'filtro' => 'high',
-		'id' => '6'
+		'id' => '6',
+		'categoria' => 'Coleção 2018'
 	],
 	[
 		'titulo' => 'Produto 7',
@@ -113,7 +119,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-7',
 		'filtro' => 'low',
-		'id' => '7'
+		'id' => '7',
+		'categoria' => 'Coleção 2019'
 	],
 	[
 		'titulo' => 'Produto 8',
@@ -123,7 +130,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-8',
 		'filtro' => 'new',
-		'id' => '8'
+		'id' => '8',
+		'categoria' => 'Coleção 2020'
 	],
 	[
 		'titulo' => 'Produto 9',
@@ -133,7 +141,8 @@ $produtos = [
 		'tamanho' => 'universal',
 		'slug' => 'produto-9',
 		'filtro' => 'new',
-		'id' => '9'
+		'id' => '9',
+		'categoria' => 'Coleção 2021'
 	]
 ];
 
