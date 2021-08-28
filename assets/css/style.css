@@ -442,9 +442,7 @@ a {
 
 /* Single Product Style */
 .single-product .product-slider {
-	padding: 20px;
-	border: 1px solid #eee!important;
-	border-radius: 5px;
+	padding: 0px;
 }
 .flexslider {
 	border: none!important;
