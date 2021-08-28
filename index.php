@@ -47,6 +47,10 @@
     case 'localizacao':
       require_once 'pages/'.$pag.'.php';
       break;
+      
+    case 'produto':
+      require_once 'pages/'.$pag.'.php';
+      break;
     
     default:
       require_once './pages/home.php';
