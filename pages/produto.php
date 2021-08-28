@@ -5,8 +5,8 @@
     return 0;
   }
 
-  foreach ($produtos as $i => $item):
-    if($item[$i] == $id):
+  foreach ($produtos as $item):
+    if($item['id'] == $id):
 ?>
 
     <div class="single-product">
@@ -20,35 +20,41 @@
           </div>
           <div class="col-md-6">
             <div class="product-slider">
-              <div id="slider" class="flexslider">
-                <ul class="slides">
-                  <li>
-                    <img src="images/produto<?=$item[$i];?>.jpg" />
-                  </li>
-                </ul>
+              <div class="flexslider">
+                <img src="images/produto-<?=$item['id'].'-'.$item['id'];?>.jpg" />
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="right-content">
-              <h4>Single Product Name</h4>
-              <h6>$55.00</h6>
-              <p>Proin commodo, diam a ultricies sagittis, erat odio rhoncus metus, eu feugiat lorem lacus aliquet arcu. Curabitur in gravida nisi, non placerat nibh. Praesent sit amet diam ultrices, commodo turpis id, dignissim leo. Suspendisse mauris massa, porttitor non fermentum vel, ullamcorper scelerisque velit. </p>
-              <span>7 left on stock</span>
+              <h4><?=$item['titulo'];?></h4>
+              <h6>R$ <?=number_format($item['preco'], 2, ',', '.');?></h6>
+              <p><?=$item['descricao'];?></p>
+              <span><?=$item['qtde'];?> no estoque</span>
               <form action="" method="get">
-                <label for="quantity">Quantity:</label>
+                <label for="quantity">Quantidade:</label>
                 <input name="quantity" type="quantity" class="quantity-text" id="quantity" 
                 	onfocus="if(this.value == '1') { this.value = ''; }" 
                     onBlur="if(this.value == '') { this.value = '1';}"
                     value="1">
-                <input type="submit" class="button" value="Order Now!">
+                <input type="submit" class="button" value="Comprar">
               </form>
               <div class="down-content">
                 <div class="categories">
-                  <h6>Category: <span><a href="#">Pants</a>,<a href="#">Women</a>,<a href="#">Lifestyle</a></span></h6>
+                  <h6>Categoria: <span><a href="#"><?=$item['categoria'];?></a></span></h6>
                 </div>
                 <div class="share">
-                  <h6>Share: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
+                  <h6>Share:
+                    <span>
+
+                  <?php foreach ($social as $item): ?>
+
+                    <a href="<?=$item['url'];?>" title="<?=$item['nome'];?>" target="_blank"><i class="fa fa-<?=strtolower($item['nome']);?>"></i></a>
+
+                  <?php endforeach; ?>
+
+                    </span>
+                  </h6>
                 </div>
               </div>
             </div>
@@ -56,84 +62,36 @@
         </div>
       </div>
     </div>
-    <!-- Single Page Ends Here -->
 
+<?php
+    endif;
+  endforeach;
+?>
 
-    <!-- Similar Starts Here -->
     <div class="featured-items">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
               <div class="line-dec"></div>
-              <h1>You May Also Like</h1>
+              <h1>Você Pode Gostar</h1>
             </div>
           </div>
           <div class="col-md-12">
             <div class="owl-carousel owl-theme">
-              <a href="single-product.html">
+
+            <?php foreach ($produtos as $item): ?>
+
+              <a href="?pagina=produto&id=<?=$item['id'];?>">
                 <div class="featured-item">
-                  <img src="assets/images/item-01.jpg" alt="Item 1">
-                  <h4>Proin vel ligula</h4>
-                  <h6>$15.00</h6>
+                  <img src="images/<?=$item['slug'];?>.jpg" alt="<?=$item['titulo'];?>">
+                  <h4><?=$item['titulo'];?></h4>
+                  <h6>R$ <?=number_format($item['preco'], 2, ',', '.');?></h6>
                 </div>
               </a>
-              <a href="single-product.html">
-                <div class="featured-item">
-                  <img src="assets/images/item-02.jpg" alt="Item 2">
-                  <h4>Erat odio rhoncus</h4>
-                  <h6>$25.00</h6>
-                </div>
-              </a>
-              <a href="single-product.html">
-                <div class="featured-item">
-                  <img src="assets/images/item-03.jpg" alt="Item 3">
-                  <h4>Integer vel turpis</h4>
-                  <h6>$35.00</h6>
-                </div>
-              </a>
-              <a href="single-product.html">
-                <div class="featured-item">
-                  <img src="assets/images/item-04.jpg" alt="Item 4">
-                  <h4>Sed purus quam</h4>
-                  <h6>$45.00</h6>
-                </div>
-              </a>
-              <a href="single-product.html">
-                <div class="featured-item">
-                  <img src="assets/images/item-05.jpg" alt="Item 5">
-                  <h4>Morbi aliquet</h4>
-                  <h6>$55.00</h6>
-                </div>
-              </a>
-              <a href="single-product.html">
-                <div class="featured-item">
-                  <img src="assets/images/item-06.jpg" alt="Item 6">
-                  <h4>Urna ac diam</h4>
-                  <h6>$65.00</h6>
-                </div>
-              </a>
-              <a href="single-product.html">
-                <div class="featured-item">
-                  <img src="assets/images/item-04.jpg" alt="Item 7">
-                  <h4>Proin eget imperdiet</h4>
-                  <h6>$75.00</h6>
-                </div>
-              </a>
-              <a href="single-product.html">
-                <div class="featured-item">
-                  <img src="assets/images/item-05.jpg" alt="Item 8">
-                  <h4>Nullam risus nisl</h4>
-                  <h6>$85.00</h6>
-                </div>
-              </a>
-              <a href="single-product.html">
-                <div class="featured-item">
-                  <img src="assets/images/item-06.jpg" alt="Item 9">
-                  <h4>Cras tempus</h4>
-                  <h6>$95.00</h6>
-                </div>
-              </a>
+
+            <?php endforeach; ?>
+
             </div>
           </div>
         </div>
